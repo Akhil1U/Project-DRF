@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <pre>
+
+    import asyncio
+
+    async def task1():
+        print("Task 1 started")
+        await asyncio.sleep(3)
+        print("Task 1 finished")
+
+    async def task2():
+        print("Task 2 started")
+        await asyncio.sleep(1)
+        print("Task 2 finished")
+
+    async def main():
+        await asyncio.gather(task1(), task2())  # Runs both tasks together
+
+    asyncio.run(main())
+    </pre>
+    \
+    
+    <article
+        class="text-token-text-primary w-full focus:outline-none scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]"
+        tabindex="-1" dir="auto" data-turn-id="request-WEB:4d0eb252-b0e5-4c71-96b6-e8d6b2facef0-8"
+        data-testid="conversation-turn-18" data-scroll-anchor="false" data-turn="assistant">
+        <h6 class="sr-only">ChatGPT said:</h6>
+        <div
+            class="text-base my-auto mx-auto [--thread-content-margin:--spacing(4)] @[37rem]:[--thread-content-margin:--spacing(6)] @[72rem]:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)">
+            <div class="[--thread-content-max-width:32rem] @[34rem]:[--thread-content-max-width:40rem] @[64rem]:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn"
+                tabindex="-1">
+                <div class="flex max-w-full flex-col grow">
+                    <div data-message-author-role="assistant" data-message-id="f505004c-afbc-4e1e-ae94-f67e1957d1b4"
+                        dir="auto"
+                        class="min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-5"
+                        data-message-model-slug="gpt-4o">
+                        <div class="flex w-full flex-col gap-1 empty:hidden first:pt-[3px]">
+                            <div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+                                <p data-start="0" data-end="104">Great question — you're diving into an important
+                                    concept in <strong data-start="60" data-end="103">asynchronous programming with
+                                        <code data-start="92" data-end="101">asyncio</code></strong>.</p>
+                                <hr data-start="106" data-end="109">
+                                <h2 data-start="111" data-end="136">🔍 Your Core Question:</h2>
+                                <blockquote data-start="137" data-end="275">
+                                    <p data-start="139" data-end="275">In the code, <code data-start="152"
+                                            data-end="176">await asyncio.sleep(1)</code> makes <code data-start="183"
+                                            data-end="192">task2()</code> wait for 1 second. But how can we know <strong
+                                            data-start="232" data-end="274">how long a task will take in real
+                                            life</strong>?</p>
+                                </blockquote>
+                                <hr data-start="277" data-end="280">
+                                <h2 data-start="282" data-end="296">✅ Answer:</h2>
+                                <p data-start="297" data-end="434">You <strong data-start="301" data-end="333">can't
+                                        always know in advance</strong> exactly how long a task will take in real-world
+                                    scenarios — especially when it involves things like:</p>
+                                <ul data-start="436" data-end="600">
+                                    <li data-start="436" data-end="485">
+                                        <p data-start="438" data-end="485">Network requests (API calls, downloading
+                                            files)</p>
+                                    </li>
+                                    <li data-start="486" data-end="504">
+                                        <p data-start="488" data-end="504">Database queries</p>
+                                    </li>
+                                    <li data-start="505" data-end="515">
+                                        <p data-start="507" data-end="515">File I/O</p>
+                                    </li>
+                                    <li data-start="516" data-end="528">
+                                        <p data-start="518" data-end="528">User input</p>
+                                    </li>
+                                    <li data-start="529" data-end="600">
+                                        <p data-start="531" data-end="600">Anything that depends on external systems or
+                                            unpredictable conditions</p>
+                                    </li>
+                                </ul>
+                                <p data-start="602" data-end="716">The <code data-start="606"
+                                        data-end="615">sleep()</code> function in your example is a <strong
+                                        data-start="646" data-end="679">placeholder to simulate delay</strong>, often
+                                    used in tutorials or testing.</p>
+                                <hr data-start="718" data-end="721">
+                                <h3 data-start="723" data-end="749">🧠 Real-World Example:</h3>
+                                <pre class="overflow-visible!" data-start="751" data-end="913"><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span><span class="hljs-keyword">async</span></span><span> </span><span><span class="hljs-keyword">def</span></span><span> </span><span><span class="hljs-title function_">fetch_data</span></span><span>():
+    </span><span><span class="hljs-built_in">print</span></span><span>(</span><span><span class="hljs-string">"Fetching data..."</span></span><span>)
+    </span><span><span class="hljs-keyword">await</span></span><span> asyncio.sleep(</span><span><span class="hljs-number">2</span></span><span>)  </span><span><span class="hljs-comment"># simulates a 2-second network request</span></span><span>
+    </span><span><span class="hljs-built_in">print</span></span><span>(</span><span><span class="hljs-string">"Data received!"</span></span><span>)
+</span></span></code></div></div></pre>
+                                <p data-start="915" data-end="1004">Here, <code data-start="921"
+                                        data-end="931">sleep(2)</code> simulates a network delay. But in real life, an
+                                    HTTP request might take:</p>
+                                <ul data-start="1005" data-end="1070">
+                                    <li data-start="1005" data-end="1031">
+                                        <p data-start="1007" data-end="1031">100 ms on a good network</p>
+                                    </li>
+                                    <li data-start="1032" data-end="1070">
+                                        <p data-start="1034" data-end="1070">3+ seconds on a slow or unstable one</p>
+                                    </li>
+                                </ul>
+                                <hr data-start="1072" data-end="1075">
+                                <h2 data-start="1077" data-end="1121">✅ So How Do You Handle Unknown Durations?</h2>
+                                <p data-start="1123" data-end="1190">In production, you use <code data-start="1146"
+                                        data-end="1153">await</code> with real I/O-bound functions, like:</p>
+                                <pre class="overflow-visible!" data-start="1192" data-end="1404"><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span><span class="hljs-keyword">import</span></span><span> aiohttp
+
+</span><span><span class="hljs-keyword">async</span></span><span> </span><span><span class="hljs-keyword">def</span></span><span> </span><span><span class="hljs-title function_">fetch_page</span></span><span>():
+    </span><span><span class="hljs-keyword">async</span></span><span> </span><span><span class="hljs-keyword">with</span></span><span> aiohttp.ClientSession() </span><span><span class="hljs-keyword">as</span></span><span> session:
+        </span><span><span class="hljs-keyword">async</span></span><span> </span><span><span class="hljs-keyword">with</span></span><span> session.get(</span><span><span class="hljs-string">'https://example.com'</span></span><span>) </span><span><span class="hljs-keyword">as</span></span><span> response:
+            </span><span><span class="hljs-keyword">return</span></span><span> </span><span><span class="hljs-keyword">await</span></span><span> response.text()
+</span></span></code></div></div></pre>
+                                <p data-start="1406" data-end="1436">Here, the duration depends on:</p>
+                                <ul data-start="1437" data-end="1501">
+                                    <li data-start="1437" data-end="1459">
+                                        <p data-start="1439" data-end="1459">Server response time</p>
+                                    </li>
+                                    <li data-start="1460" data-end="1477">
+                                        <p data-start="1462" data-end="1477">Network latency</p>
+                                    </li>
+                                    <li data-start="1478" data-end="1494">
+                                        <p data-start="1480" data-end="1494">DNS resolution</p>
+                                    </li>
+                                    <li data-start="1495" data-end="1501">
+                                        <p data-start="1497" data-end="1501">etc.</p>
+                                    </li>
+                                </ul>
+                                <p data-start="1503" data-end="1624">And you <strong data-start="1511"
+                                        data-end="1548">don’t need to know the exact time</strong>, because <code
+                                        data-start="1558" data-end="1565">await</code> will suspend the function until
+                                    the operation is complete.</p>
+                                <hr data-start="1626" data-end="1629">
+                                <h2 data-start="1631" data-end="1664">✅ What <code data-start="1641"
+                                        data-end="1659">asyncio.gather()</code> Does</h2>
+                                <p data-start="1666" data-end="1679">In your code:</p>
+                                <pre class="overflow-visible!" data-start="1681" data-end="1733"><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span><span class="hljs-keyword">await</span></span><span> asyncio.gather(task1(), task2())
+</span></span></code></div></div></pre>
+                                <p data-start="1735" data-end="1769">Both tasks start at the same time:</p>
+                                <ul data-start="1770" data-end="1834">
+                                    <li data-start="1770" data-end="1802">
+                                        <p data-start="1772" data-end="1802"><code data-start="1772"
+                                                data-end="1781">task1()</code> sleeps for 3 seconds</p>
+                                    </li>
+                                    <li data-start="1803" data-end="1834">
+                                        <p data-start="1805" data-end="1834"><code data-start="1805"
+                                                data-end="1814">task2()</code> sleeps for 1 second</p>
+                                    </li>
+                                </ul>
+                                <p data-start="1836" data-end="1839">So:</p>
+                                <ul data-start="1840" data-end="1949">
+                                    <li data-start="1840" data-end="1866">
+                                        <p data-start="1842" data-end="1866"><code data-start="1842"
+                                                data-end="1851">task2()</code> finishes first</p>
+                                    </li>
+                                    <li data-start="1867" data-end="1949">
+                                        <p data-start="1869" data-end="1949">The total runtime is <strong
+                                                data-start="1890" data-end="1903">3 seconds</strong>, not 4 — because
+                                            they're running concurrently</p>
+                                    </li>
+                                </ul>
+                                <p data-start="1951" data-end="2077">🧠 Even if you <em data-start="1966"
+                                        data-end="1973">don't</em> know exact durations, <code data-start="1996"
+                                        data-end="2006">gather()</code> helps run multiple tasks efficiently by not
+                                    blocking on one at a time.</p>
+                                <hr data-start="2079" data-end="2082">
+                                <h2 data-start="2084" data-end="2124">🧪 Bonus: Measure Real Execution Time</h2>
+                                <p data-start="2126" data-end="2156">You can time a task like this:</p>
+                                <pre class="overflow-visible!" data-start="2158" data-end="2298"><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span><span class="hljs-keyword">import</span></span><span> time
+
+start = time.perf_counter()
+</span><span><span class="hljs-keyword">await</span></span><span> task1()
+end = time.perf_counter()
+</span><span><span class="hljs-built_in">print</span></span><span>(</span><span><span class="hljs-string">f"Task took <span class="hljs-subst">{end - start:<span class="hljs-number">.2</span></span></span></span><span>f} seconds")
+</span></span></code></div></div></pre>
+                                <hr data-start="2300" data-end="2303">
+                                <h2 data-start="2305" data-end="2317">✅ Summary</h2>
+                                <div class="_tableContainer_sk2ct_1">
+                                    <div tabindex="-1" class="_tableWrapper_sk2ct_13 group flex w-fit flex-col-reverse">
+                                        <table data-start="2319" data-end="2717"
+                                            class="w-fit min-w-(--thread-content-width)">
+                                            <thead data-start="2319" data-end="2340">
+                                                <tr data-start="2319" data-end="2340">
+                                                    <th data-start="2319" data-end="2330" data-col-size="md">Question
+                                                    </th>
+                                                    <th data-start="2330" data-end="2340" data-col-size="md">Answer</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody data-start="2362" data-end="2717">
+                                                <tr data-start="2362" data-end="2462">
+                                                    <td data-start="2362" data-end="2415" data-col-size="md">Can you
+                                                        know how long a task will take in advance?</td>
+                                                    <td data-col-size="md" data-start="2415" data-end="2462">❌ Not
+                                                        always, especially for real-world I/O</td>
+                                                </tr>
+                                                <tr data-start="2463" data-end="2525">
+                                                    <td data-start="2463" data-end="2484" data-col-size="md">Why use
+                                                        <code data-start="2473" data-end="2482">sleep()</code>?
+                                                    </td>
+                                                    <td data-col-size="md" data-start="2484" data-end="2525">To simulate
+                                                        delay or test concurrency</td>
+                                                </tr>
+                                                <tr data-start="2526" data-end="2617">
+                                                    <td data-start="2526" data-end="2551" data-col-size="md">How does
+                                                        <code data-start="2537" data-end="2544">await</code> help?
+                                                    </td>
+                                                    <td data-col-size="md" data-start="2551" data-end="2617">It waits
+                                                        for the task to complete, no matter how long it takes</td>
+                                                </tr>
+                                                <tr data-start="2618" data-end="2717">
+                                                    <td data-start="2618" data-end="2663" data-col-size="md">Can tasks
+                                                        run in parallel with <code data-start="2651"
+                                                            data-end="2661">gather()</code>?</td>
+                                                    <td data-col-size="md" data-start="2663" data-end="2717">✅ Yes —
+                                                        they're run concurrently, not sequentially</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="sticky end-(--thread-content-margin) h-0 self-end select-none">
+                                            <div class="absolute end-0 flex items-end" style="height: 33px;"><span
+                                                    class="" data-state="closed"><button aria-label="Copy table"
+                                                        class="hover:bg-token-bg-tertiary text-token-text-secondary my-1 rounded-sm p-1 transition-opacity group-[:not(:hover):not(:focus-within)]:pointer-events-none group-[:not(:hover):not(:focus-within)]:opacity-0"><svg
+                                                            width="20" height="20" viewBox="0 0 20 20"
+                                                            fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                                            class="icon">
+                                                            <path
+                                                                d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z">
+                                                            </path>
+                                                        </svg></button></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr data-start="2719" data-end="2722">
+                                <p data-start="2724" data-end="2783" data-is-last-node="" data-is-only-node="">Want a
+                                    real-world async example using APIs or file reading?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex min-h-[46px] justify-start">
+                    <div class="touch:-me-2 touch:-ms-3.5 -ms-2.5 -me-1 flex flex-wrap items-center gap-y-4 p-1 select-none touch:w-[calc(100%+--spacing(3.5))] -mt-1 w-[calc(100%+--spacing(2.5))] duration-[1.5s] focus-within:transition-none hover:transition-none pointer-events-none [mask-image:linear-gradient(to_right,black_33%,transparent_66%)] [mask-size:300%_100%] [mask-position:100%_0%] motion-safe:transition-[mask-position] group-hover/turn-messages:pointer-events-auto group-hover/turn-messages:[mask-position:0_0] group-focus-within/turn-messages:pointer-events-auto group-focus-within/turn-messages:[mask-position:0_0] has-data-[state=open]:pointer-events-auto has-data-[state=open]:[mask-position:0_0]"
+                        style="mask-position: 0% 0%;"><button
+                            class="text-token-text-secondary hover:bg-token-bg-secondary rounded-lg" aria-label="Copy"
+                            aria-pressed="false" data-testid="copy-turn-action-button" data-state="closed"><span
+                                class="flex items-center justify-center touch:w-10 h-8 w-8"><svg width="20" height="20"
+                                    viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    class="icon">
+                                    <path
+                                        d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z">
+                                    </path>
+                                </svg></span></button></div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="text-token-text-primary w-full focus:outline-none scroll-mt-(--header-height)" tabindex="-1"
+        dir="auto" data-turn-id="d8d3a465-7058-4376-9e90-0d7f0a5a1405" data-testid="conversation-turn-19"
+        data-scroll-anchor="false" data-turn="user" style="scroll-margin-top: -64px;">
+        <h5 class="sr-only">You said:</h5>
+        <div
+            class="text-base my-auto mx-auto pt-12 [--thread-content-margin:--spacing(4)] @[37rem]:[--thread-content-margin:--spacing(6)] @[72rem]:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)">
+            <div class="[--thread-content-max-width:32rem] @[34rem]:[--thread-content-max-width:40rem] @[64rem]:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col"
+                tabindex="-1">
+                <div class="flex max-w-full flex-col grow">
+                    <div data-message-author-role="user" data-message-id="d8d3a465-7058-4376-9e90-0d7f0a5a1405"
+                        dir="auto"
+                        class="min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-5">
+                        <div class="flex w-full flex-col gap-1 empty:hidden items-end rtl:items-start">
+                            <div class="user-message-bubble-color relative max-w-[var(--user-chat-width,70%)] rounded-[18px] px-4 py-1.5 data-[multiline]:py-3"
+                                data-multiline="">
+                                <div class="whitespace-pre-wrap">when we need this type of stuff. bcz our cpu can handle
+                                    multiple task at a time</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-end">
+                    <div class="touch:-me-2 touch:-ms-3.5 -ms-2.5 -me-1 flex flex-wrap items-center gap-y-4 p-1 select-none focus-within:transition-none hover:transition-none duration-300 group-hover/turn-messages:delay-300 pointer-events-none opacity-0 motion-safe:transition-opacity group-hover/turn-messages:pointer-events-auto group-hover/turn-messages:opacity-100 group-focus-within/turn-messages:pointer-events-auto group-focus-within/turn-messages:opacity-100 has-data-[state=open]:pointer-events-auto has-data-[state=open]:opacity-100"
+                        style="mask-position: 0% 0%;"><button
+                            class="text-token-text-secondary hover:bg-token-bg-secondary rounded-lg" aria-label="Copy"
+                            aria-pressed="false" data-testid="copy-turn-action-button" data-state="closed"><span
+                                class="flex items-center justify-center touch:w-10 h-8 w-8"><svg width="20" height="20"
+                                    viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    class="icon">
+                                    <path
+                                        d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z">
+                                    </path>
+                                </svg></span></button></div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article
+        class="text-token-text-primary w-full focus:outline-none scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]"
+        tabindex="-1" dir="auto" data-turn-id="request-WEB:4d0eb252-b0e5-4c71-96b6-e8d6b2facef0-9"
+        data-testid="conversation-turn-20" data-scroll-anchor="false" data-turn="assistant">
+        <h6 class="sr-only">ChatGPT said:</h6>
+        <div
+            class="text-base my-auto mx-auto [--thread-content-margin:--spacing(4)] @[37rem]:[--thread-content-margin:--spacing(6)] @[72rem]:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)">
+            <div class="[--thread-content-max-width:32rem] @[34rem]:[--thread-content-max-width:40rem] @[64rem]:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn"
+                tabindex="-1">
+                <div class="flex max-w-full flex-col grow">
+                    <div data-message-author-role="assistant" data-message-id="2669ff6b-a68b-4f3f-8ba3-d3fb91b869d0"
+                        dir="auto"
+                        class="min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-5"
+                        data-message-model-slug="gpt-4o">
+                        <div class="flex w-full flex-col gap-1 empty:hidden first:pt-[3px]">
+                            <div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+                                <p data-start="0" data-end="160">Excellent follow-up — you're asking <strong
+                                        data-start="36" data-end="76">why we even need <code data-start="55"
+                                            data-end="62">async</code> and <code data-start="67"
+                                            data-end="74">await</code></strong> when CPUs can already handle multiple
+                                    tasks using things like threads or processes.</p>
+                                <p data-start="162" data-end="216">Let’s break this down in <strong data-start="187"
+                                        data-end="215">simple, real-world terms</strong>.</p>
+                                <hr data-start="218" data-end="221">
+                                <h2 data-start="223" data-end="271">✅ When Do We Actually Need <code data-start="253"
+                                        data-end="260">async</code> / <code data-start="263"
+                                        data-end="270">await</code>?</h2>
+                                <p data-start="273" data-end="366">We need <strong data-start="281"
+                                        data-end="309">asynchronous programming</strong> when the program is <strong
+                                        data-start="330" data-end="359">waiting on something slow</strong>, like:</p>
+                                <h3 data-start="368" data-end="395">⏳ <strong data-start="374" data-end="393">I/O-bound
+                                        tasks</strong></h3>
+                                <blockquote data-start="396" data-end="461">
+                                    <p data-start="398" data-end="461">Tasks that spend most of their time <strong
+                                            data-start="434" data-end="445">waiting</strong> — not computing</p>
+                                </blockquote>
+                                <p data-start="463" data-end="472">Examples:</p>
+                                <ul data-start="473" data-end="658">
+                                    <li data-start="473" data-end="516">
+                                        <p data-start="475" data-end="516">HTTP requests (fetching data from an API)</p>
+                                    </li>
+                                    <li data-start="517" data-end="544">
+                                        <p data-start="519" data-end="544">Reading/writing to a file</p>
+                                    </li>
+                                    <li data-start="545" data-end="563">
+                                        <p data-start="547" data-end="563">Database queries</p>
+                                    </li>
+                                    <li data-start="564" data-end="594">
+                                        <p data-start="566" data-end="594">Delays (e.g., timers, sleep)</p>
+                                    </li>
+                                    <li data-start="595" data-end="607">
+                                        <p data-start="597" data-end="607">User input</p>
+                                    </li>
+                                    <li data-start="608" data-end="658">
+                                        <p data-start="610" data-end="658">Cloud service communication (e.g., S3,
+                                            Firebase)</p>
+                                    </li>
+                                </ul>
+                                <p data-start="660" data-end="799">In these cases, the CPU isn't doing much — it's just
+                                    sitting there waiting. <code data-start="736" data-end="743">async</code> allows
+                                    other tasks to run <strong data-start="770" data-end="798">during that waiting
+                                        time</strong>.</p>
+                                <hr data-start="801" data-end="804">
+                                <h3 data-start="806" data-end="842">❌ We <strong data-start="815" data-end="837">don’t
+                                        need <code data-start="828" data-end="835">async</code></strong> for:</h3>
+                                <h3 data-start="844" data-end="872">💻 <strong data-start="851" data-end="870">CPU-bound
+                                        tasks</strong></h3>
+                                <blockquote data-start="873" data-end="910">
+                                    <p data-start="875" data-end="910">Tasks that do <strong data-start="889"
+                                            data-end="910">heavy computation</strong></p>
+                                </blockquote>
+                                <p data-start="912" data-end="921">Examples:</p>
+                                <ul data-start="922" data-end="1004">
+                                    <li data-start="922" data-end="940">
+                                        <p data-start="924" data-end="940">Image processing</p>
+                                    </li>
+                                    <li data-start="941" data-end="968">
+                                        <p data-start="943" data-end="968">Complex math calculations</p>
+                                    </li>
+                                    <li data-start="969" data-end="987">
+                                        <p data-start="971" data-end="987">Machine learning</p>
+                                    </li>
+                                    <li data-start="988" data-end="1004">
+                                        <p data-start="990" data-end="1004">Video encoding</p>
+                                    </li>
+                                </ul>
+                                <p data-start="1006" data-end="1102">These tasks use the <strong data-start="1026"
+                                        data-end="1039">CPU fully</strong>, and in such cases, <code data-start="1060"
+                                        data-end="1067">async</code> doesn’t help — instead, you’d use:</p>
+                                <ul data-start="1103" data-end="1252">
+                                    <li data-start="1103" data-end="1181">
+                                        <p data-start="1105" data-end="1181"><strong data-start="1105"
+                                                data-end="1123">Multithreading</strong> (if the task involves I/O +
+                                            Python’s GIL isn’t a problem)</p>
+                                    </li>
+                                    <li data-start="1182" data-end="1252">
+                                        <p data-start="1184" data-end="1252"><strong data-start="1184"
+                                                data-end="1203">Multiprocessing</strong> (spawns separate processes for
+                                            true parallelism)</p>
+                                    </li>
+                                </ul>
+                                <hr data-start="1254" data-end="1257">
+                                <h2 data-start="1259" data-end="1292">🧠 Analogy: Restaurant Kitchen</h2>
+                                <p data-start="1294" data-end="1316">Imagine you’re a chef.</p>
+                                <ul data-start="1318" data-end="1475">
+                                    <li data-start="1318" data-end="1384">
+                                        <p data-start="1320" data-end="1384">🍳 You start cooking pasta → it needs to
+                                            <strong data-start="1361" data-end="1384">boil for 10 minutes</strong>
+                                        </p>
+                                    </li>
+                                    <li data-start="1385" data-end="1475">
+                                        <p data-start="1387" data-end="1475">While it’s boiling, instead of standing
+                                            there waiting, you start <strong data-start="1452" data-end="1475">prepping
+                                                vegetables</strong></p>
+                                    </li>
+                                </ul>
+                                <p data-start="1477" data-end="1506">That’s asynchronous thinking.</p>
+                                <ul data-start="1508" data-end="1655">
+                                    <li data-start="1508" data-end="1567">
+                                        <p data-start="1510" data-end="1567">If you waited 10 minutes doing nothing,
+                                            it’d be wasteful.</p>
+                                    </li>
+                                    <li data-start="1568" data-end="1655">
+                                        <p data-start="1570" data-end="1655">Similarly, in code: <code data-start="1590"
+                                                data-end="1597">await</code> lets the CPU do something else while one
+                                            task is waiting.</p>
+                                    </li>
+                                </ul>
+                                <hr data-start="1657" data-end="1660">
+                                <h2 data-start="1662" data-end="1700">✅ What Asynchronous Code Helps With</h2>
+                                <div class="_tableContainer_sk2ct_1">
+                                    <div tabindex="-1" class="_tableWrapper_sk2ct_13 group flex w-fit flex-col-reverse">
+                                        <table data-start="1702" data-end="2050"
+                                            class="w-fit min-w-(--thread-content-width)">
+                                            <thead data-start="1702" data-end="1730">
+                                                <tr data-start="1702" data-end="1730">
+                                                    <th data-start="1702" data-end="1712" data-col-size="sm">Problem
+                                                    </th>
+                                                    <th data-start="1712" data-end="1730" data-col-size="md">Async
+                                                        Solution</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody data-start="1759" data-end="2050">
+                                                <tr data-start="1759" data-end="1819">
+                                                    <td data-start="1759" data-end="1783" data-col-size="sm">Waiting on
+                                                        a slow API</td>
+                                                    <td data-col-size="md" data-start="1783" data-end="1819">Don't block
+                                                        — start another task</td>
+                                                </tr>
+                                                <tr data-start="1820" data-end="1877">
+                                                    <td data-start="1820" data-end="1850" data-col-size="sm">Delays
+                                                        (e.g. sleep, timers)</td>
+                                                    <td data-col-size="md" data-start="1850" data-end="1877">Let other
+                                                        tasks proceed</td>
+                                                </tr>
+                                                <tr data-start="1878" data-end="1943">
+                                                    <td data-start="1878" data-end="1900" data-col-size="sm">Slow
+                                                        database query</td>
+                                                    <td data-col-size="md" data-start="1900" data-end="1943">Don’t block
+                                                        the whole app while waiting</td>
+                                                </tr>
+                                                <tr data-start="1944" data-end="2050">
+                                                    <td data-start="1944" data-end="1974" data-col-size="sm">Handling
+                                                        thousands of users</td>
+                                                    <td data-col-size="md" data-start="1974" data-end="2050">Use one
+                                                        thread to manage multiple I/O tasks (like in FastAPI or Node.js)
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="sticky end-(--thread-content-margin) h-0 self-end select-none">
+                                            <div class="absolute end-0 flex items-end" style="height: 33px;"><span
+                                                    class="" data-state="closed"><button aria-label="Copy table"
+                                                        class="hover:bg-token-bg-tertiary text-token-text-secondary my-1 rounded-sm p-1 transition-opacity group-[:not(:hover):not(:focus-within)]:pointer-events-none group-[:not(:hover):not(:focus-within)]:opacity-0"><svg
+                                                            width="20" height="20" viewBox="0 0 20 20"
+                                                            fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                                            class="icon">
+                                                            <path
+                                                                d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z">
+                                                            </path>
+                                                        </svg></button></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr data-start="2052" data-end="2055">
+                                <h2 data-start="2057" data-end="2093">🧪 Example: Without vs With Async</h2>
+                                <h3 data-start="2095" data-end="2120">Without async — slow:</h3>
+                                <pre class="overflow-visible!" data-start="2122" data-end="2279"><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span><span class="hljs-comment"># These run one after another</span></span><span>
+fetch_data_from_api()  </span><span><span class="hljs-comment"># Takes 3s</span></span><span>
+read_file()            </span><span><span class="hljs-comment"># Takes 2s</span></span><span>
+send_email()           </span><span><span class="hljs-comment"># Takes 1s</span></span><span>
+</span><span><span class="hljs-comment"># Total: 6s</span></span><span>
+</span></span></code></div></div></pre>
+                                <h3 data-start="2281" data-end="2303">With async — fast:</h3>
+                                <pre class="overflow-visible!" data-start="2305" data-end="2496"><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span><span class="hljs-comment"># These run concurrently</span></span><span>
+</span><span><span class="hljs-keyword">await</span></span><span> asyncio.gather(
+    fetch_data_from_api(),  </span><span><span class="hljs-comment"># 3s</span></span><span>
+    read_file(),            </span><span><span class="hljs-comment"># 2s</span></span><span>
+    send_email()            </span><span><span class="hljs-comment"># 1s</span></span><span>
+)
+</span><span><span class="hljs-comment"># Total: ~3s (fastest of all)</span></span><span>
+</span></span></code></div></div></pre>
+                                <hr data-start="2498" data-end="2501">
+                                <h2 data-start="2503" data-end="2521">✅ Final Summary</h2>
+                                <div class="_tableContainer_sk2ct_1">
+                                    <div tabindex="-1" class="_tableWrapper_sk2ct_13 group flex w-fit flex-col-reverse">
+                                        <table data-start="2523" data-end="2929"
+                                            class="w-fit min-w-(--thread-content-width)">
+                                            <thead data-start="2523" data-end="2548">
+                                                <tr data-start="2523" data-end="2548">
+                                                    <th data-start="2523" data-end="2533" data-col-size="sm">Concept
+                                                    </th>
+                                                    <th data-start="2533" data-end="2548" data-col-size="md">Explanation
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody data-start="2574" data-end="2929">
+                                                <tr data-start="2574" data-end="2651">
+                                                    <td data-start="2574" data-end="2607" data-col-size="sm"><strong
+                                                            data-start="2576" data-end="2606">CPU can do multiple
+                                                            things</strong></td>
+                                                    <td data-col-size="md" data-start="2607" data-end="2651">Yes, but
+                                                        it's best at heavy computations</td>
+                                                </tr>
+                                                <tr data-start="2652" data-end="2731">
+                                                    <td data-start="2652" data-end="2686" data-col-size="sm"><strong
+                                                            data-start="2654" data-end="2685">Async is best for I/O
+                                                            tasks</strong></td>
+                                                    <td data-col-size="md" data-start="2686" data-end="2731">Like
+                                                        waiting on APIs, databases, or files</td>
+                                                </tr>
+                                                <tr data-start="2732" data-end="2825">
+                                                    <td data-start="2732" data-end="2776" data-col-size="sm"><strong
+                                                            data-start="2734" data-end="2775">Why not use
+                                                            threads/processes always?</strong></td>
+                                                    <td data-col-size="md" data-start="2776" data-end="2825">More
+                                                        memory, more complexity, harder to scale</td>
+                                                </tr>
+                                                <tr data-start="2826" data-end="2929">
+                                                    <td data-start="2826" data-end="2853" data-col-size="sm"><strong
+                                                            data-start="2828" data-end="2852">Async is
+                                                            lightweight</strong></td>
+                                                    <td data-col-size="md" data-start="2853" data-end="2929">Handles
+                                                        thousands of tasks with one thread (e.g. FastAPI, Node.js, etc.)
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="sticky end-(--thread-content-margin) h-0 self-end select-none">
+                                            <div class="absolute end-0 flex items-end" style="height: 33px;"><span
+                                                    class="" data-state="closed"><button aria-label="Copy table"
+                                                        class="hover:bg-token-bg-tertiary text-token-text-secondary my-1 rounded-sm p-1 transition-opacity group-[:not(:hover):not(:focus-within)]:pointer-events-none group-[:not(:hover):not(:focus-within)]:opacity-0"><svg
+                                                            width="20" height="20" viewBox="0 0 20 20"
+                                                            fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                                            class="icon">
+                                                            <path
+                                                                d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z">
+                                                            </path>
+                                                        </svg></button></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr data-start="2931" data-end="2934">
+                                <p data-start="2936" data-end="3042" data-is-last-node="" data-is-only-node="">Would you
+                                    like to see a real example where using <code data-start="2985"
+                                        data-end="2992">async</code> makes a program <strong data-start="3009"
+                                        data-end="3023">10x faster</strong> than regular code?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex min-h-[46px] justify-start">
+                    <div class="touch:-me-2 touch:-ms-3.5 -ms-2.5 -me-1 flex flex-wrap items-center gap-y-4 p-1 select-none touch:w-[calc(100%+--spacing(3.5))] -mt-1 w-[calc(100%+--spacing(2.5))] duration-[1.5s] focus-within:transition-none hover:transition-none pointer-events-none [mask-image:linear-gradient(to_right,black_33%,transparent_66%)] [mask-size:300%_100%] [mask-position:100%_0%] motion-safe:transition-[mask-position] group-hover/turn-messages:pointer-events-auto group-hover/turn-messages:[mask-position:0_0] group-focus-within/turn-messages:pointer-events-auto group-focus-within/turn-messages:[mask-position:0_0] has-data-[state=open]:pointer-events-auto has-data-[state=open]:[mask-position:0_0]"
+                        style="mask-position: 0% 0%;"><button
+                            class="text-token-text-secondary hover:bg-token-bg-secondary rounded-lg" aria-label="Copy"
+                            aria-pressed="false" data-testid="copy-turn-action-button" data-state="closed"><span
+                                class="flex items-center justify-center touch:w-10 h-8 w-8"><svg width="20" height="20"
+                                    viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    class="icon">
+                                    <path
+                                        d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z">
+                                    </path>
+                                </svg></span></button></div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="text-token-text-primary w-full focus:outline-none scroll-mt-(--header-height)" tabindex="-1"
+        dir="auto" data-turn-id="6c5ef367-a1da-48c6-82fb-7b4f6bf31018" data-testid="conversation-turn-21"
+        data-scroll-anchor="false" data-turn="user" style="scroll-margin-top: -64px;">
+        <h5 class="sr-only">You said:</h5>
+        <div
+            class="text-base my-auto mx-auto pt-12 [--thread-content-margin:--spacing(4)] @[37rem]:[--thread-content-margin:--spacing(6)] @[72rem]:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)">
+            <div class="[--thread-content-max-width:32rem] @[34rem]:[--thread-content-max-width:40rem] @[64rem]:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col"
+                tabindex="-1">
+                <div class="flex max-w-full flex-col grow">
+                    <div data-message-author-role="user" data-message-id="6c5ef367-a1da-48c6-82fb-7b4f6bf31018"
+                        dir="auto"
+                        class="min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-5">
+                        <div class="flex w-full flex-col gap-1 empty:hidden items-end rtl:items-start">
+                            <div class="user-message-bubble-color relative max-w-[var(--user-chat-width,70%)] rounded-[18px] px-4 py-1.5 data-[multiline]:py-3"
+                                data-multiline="">
+                                <div class="whitespace-pre-wrap">why this system i mean whole program does not do this
+                                    automatically why we need to define async, bcz this should be</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-end">
+                    <div class="touch:-me-2 touch:-ms-3.5 -ms-2.5 -me-1 flex flex-wrap items-center gap-y-4 p-1 select-none focus-within:transition-none hover:transition-none duration-300 group-hover/turn-messages:delay-300 pointer-events-none opacity-0 motion-safe:transition-opacity group-hover/turn-messages:pointer-events-auto group-hover/turn-messages:opacity-100 group-focus-within/turn-messages:pointer-events-auto group-focus-within/turn-messages:opacity-100 has-data-[state=open]:pointer-events-auto has-data-[state=open]:opacity-100"
+                        style="mask-position: 0% 0%;"><button
+                            class="text-token-text-secondary hover:bg-token-bg-secondary rounded-lg" aria-label="Copy"
+                            aria-pressed="false" data-testid="copy-turn-action-button" data-state="closed"><span
+                                class="flex items-center justify-center touch:w-10 h-8 w-8"><svg width="20" height="20"
+                                    viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    class="icon">
+                                    <path
+                                        d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z">
+                                    </path>
+                                </svg></span></button></div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article
+        class="text-token-text-primary w-full focus:outline-none scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]"
+        tabindex="-1" dir="auto" data-turn-id="request-WEB:4d0eb252-b0e5-4c71-96b6-e8d6b2facef0-10"
+        data-testid="conversation-turn-22" data-scroll-anchor="true" data-turn="assistant"
+        style="min-height: calc(-248px + 100dvh);">
+        <h6 class="sr-only">ChatGPT said:</h6>
+        <div
+            class="text-base my-auto mx-auto pb-10 [--thread-content-margin:--spacing(4)] @[37rem]:[--thread-content-margin:--spacing(6)] @[72rem]:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)">
+            <div class="[--thread-content-max-width:32rem] @[34rem]:[--thread-content-max-width:40rem] @[64rem]:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn"
+                tabindex="-1">
+                <div class="flex max-w-full flex-col grow">
+                    <div data-message-author-role="assistant" data-message-id="33bbec0f-f3e9-434c-89cf-6faa590b9fa9"
+                        dir="auto"
+                        class="min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-5"
+                        data-message-model-slug="gpt-4o">
+                        <div class="flex w-full flex-col gap-1 empty:hidden first:pt-[3px]">
+                            <div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+                                <p data-start="0" data-end="48">You're asking a <strong data-start="16"
+                                        data-end="47">deep and important question</strong>:</p>
+                                <blockquote data-start="50" data-end="239">
+                                    <p data-start="52" data-end="239">"Why doesn’t the programming language
+                                        automatically handle async behavior? Why do we need to explicitly write <code
+                                            data-start="162" data-end="169">async</code> and <code data-start="174"
+                                            data-end="181">await</code>? Shouldn’t the system be smart enough to do this
+                                        for us?"</p>
+                                </blockquote>
+                                <p data-start="241" data-end="377">Let’s break that down into <strong data-start="268"
+                                        data-end="311">why we need to write <code data-start="291"
+                                            data-end="298">async</code> explicitly</strong>, and <strong
+                                        data-start="317" data-end="376">why the system doesn't just “know” when to
+                                        switch tasks</strong>.</p>
+                                <hr data-start="379" data-end="382">
+                                <h2 data-start="384" data-end="448">🔧 1. <strong data-start="393"
+                                        data-end="448">Because the system needs to know what's “awaitable”</strong></h2>
+                                <p data-start="450" data-end="617">Programming languages (like Python, JavaScript, etc.)
+                                    don't automatically know <strong data-start="529" data-end="589">which parts of your
+                                        code will be slow or involve waiting</strong> — unless you <strong
+                                        data-start="603" data-end="611">tell</strong> them.</p>
+                                <h3 data-start="619" data-end="643">🧠 Think about this:</h3>
+                                <ul data-start="644" data-end="916">
+                                    <li data-start="644" data-end="788">
+                                        <p data-start="646" data-end="695"><code data-start="646"
+                                                data-end="669">await some_function()</code> tells the Python runtime:
+                                        </p>
+                                        <blockquote data-start="698" data-end="788">
+                                            <p data-start="700" data-end="788">"This function might <strong
+                                                    data-start="721" data-end="730">pause</strong>, so while it’s
+                                                waiting, feel free to run something else."</p>
+                                        </blockquote>
+                                    </li>
+                                    <li data-start="790" data-end="916">
+                                        <p data-start="792" data-end="916">If you don’t use <code data-start="809"
+                                                data-end="816">await</code>, the system assumes that the function will
+                                            just run normally, start to finish, <strong data-start="896"
+                                                data-end="915">without pausing</strong>.</p>
+                                    </li>
+                                </ul>
+                                <hr data-start="918" data-end="921">
+                                <h2 data-start="923" data-end="978">💬 2. <strong data-start="932" data-end="978">Most
+                                        code is fast and runs in microseconds</strong></h2>
+                                <p data-start="980" data-end="993">Imagine this:</p>
+                                <pre class="overflow-visible!" data-start="995" data-end="1019"><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span>x = </span><span><span class="hljs-number">5</span></span><span> + </span><span><span class="hljs-number">10</span></span><span>
+</span></span></code></div></div></pre>
+                                <p data-start="1021" data-end="1116">You don’t want the system to check “Should I pause
+                                    here?” for every tiny operation. That would:</p>
+                                <ul data-start="1117" data-end="1186">
+                                    <li data-start="1117" data-end="1136">
+                                        <p data-start="1119" data-end="1136">Waste performance</p>
+                                    </li>
+                                    <li data-start="1137" data-end="1153">
+                                        <p data-start="1139" data-end="1153">Add complexity</p>
+                                    </li>
+                                    <li data-start="1154" data-end="1186">
+                                        <p data-start="1156" data-end="1186">Be unnecessary 99% of the time</p>
+                                    </li>
+                                </ul>
+                                <p data-start="1188" data-end="1279">So you only mark something <code data-start="1215"
+                                        data-end="1222">async</code> <strong data-start="1223" data-end="1255">when you
+                                        know it might block</strong> (like waiting for I/O).</p>
+                                <hr data-start="1281" data-end="1284">
+                                <h2 data-start="1286" data-end="1343">🧠 3. <strong data-start="1295"
+                                        data-end="1343">Automatic async switching is not always safe</strong></h2>
+                                <p data-start="1345" data-end="1363">Imagine this code:</p>
+                                <pre class="overflow-visible!" data-start="1365" data-end="1432"><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span>balance = get_user_balance(user_id)
+withdraw(balance)
+</span></span></code></div></div></pre>
+                                <p data-start="1434" data-end="1492">Now, let’s say <code data-start="1449"
+                                        data-end="1469">get_user_balance()</code> makes a database call.</p>
+                                <p data-start="1494" data-end="1634">If the system <em data-start="1508"
+                                        data-end="1523">automatically</em> paused that line to switch to another task,
+                                    <strong data-start="1568" data-end="1634">what happens if two tasks modify the
+                                        balance at the same time?</strong>
+                                </p>
+                                <p data-start="1636" data-end="1708">→ <strong data-start="1638" data-end="1657">Race
+                                        conditions</strong><br data-start="1657" data-end="1660">
+                                    → <strong data-start="1662" data-end="1681">Data corruption</strong><br
+                                        data-start="1681" data-end="1684">
+                                    → <strong data-start="1686" data-end="1708">Hard-to-debug bugs</strong></p>
+                                <p data-start="1710" data-end="1769">By forcing you to <strong data-start="1728"
+                                        data-end="1755">explicitly mark <code data-start="1746"
+                                            data-end="1753">await</code></strong>, Python says:</p>
+                                <blockquote data-start="1770" data-end="1858">
+                                    <p data-start="1772" data-end="1858">“Hey developer, you're in control. If this line
+                                        might pause, be intentional about it.”</p>
+                                </blockquote>
+                                <hr data-start="1860" data-end="1863">
+                                <h2 data-start="1865" data-end="1914">⚙️ 4. <strong data-start="1874"
+                                        data-end="1914">Your Code = a Recipe for a Scheduler</strong></h2>
+                                <p data-start="1916" data-end="1990">When you write async code, you're not telling the
+                                    computer "run this now."</p>
+                                <p data-start="1992" data-end="2010">You're telling it:</p>
+                                <blockquote data-start="2011" data-end="2095">
+                                    <p data-start="2013" data-end="2095">"Here’s what can pause. Here's what can run in
+                                        parallel. Here’s what should wait."</p>
+                                </blockquote>
+                                <p data-start="2097" data-end="2180">The system (event loop / scheduler) then uses this
+                                    to <strong data-start="2151" data-end="2179">efficiently manage tasks</strong>.</p>
+                                <hr data-start="2182" data-end="2185">
+                                <h2 data-start="2187" data-end="2235">🚀 5. <strong data-start="2196"
+                                        data-end="2235">Languages That Try to Automate This</strong></h2>
+                                <p data-start="2237" data-end="2285">Some languages are starting to make this easier:
+                                </p>
+                                <h3 data-start="2287" data-end="2306">⚙️ Go (Golang):</h3>
+                                <ul data-start="2307" data-end="2428">
+                                    <li data-start="2307" data-end="2379">
+                                        <p data-start="2309" data-end="2379">You write <code data-start="2319"
+                                                data-end="2336">go myFunction()</code> and the system <strong
+                                                data-start="2352" data-end="2379">manages async execution</strong></p>
+                                    </li>
+                                    <li data-start="2380" data-end="2428">
+                                        <p data-start="2382" data-end="2428">Go handles many of the complexities
+                                            internally</p>
+                                    </li>
+                                </ul>
+                                <h3 data-start="2430" data-end="2448">🌐 JavaScript:</h3>
+                                <ul data-start="2449" data-end="2635">
+                                    <li data-start="2449" data-end="2522">
+                                        <p data-start="2451" data-end="2522">In browsers, functions like <code
+                                                data-start="2479" data-end="2488">fetch()</code> return <strong
+                                                data-start="2496" data-end="2508">Promises</strong> automatically</p>
+                                    </li>
+                                    <li data-start="2523" data-end="2635">
+                                        <p data-start="2525" data-end="2569">But you still have to <code
+                                                data-start="2547" data-end="2554">await</code> them, because:</p>
+                                        <ul data-start="2572" data-end="2635">
+                                            <li data-start="2572" data-end="2588">
+                                                <p data-start="2574" data-end="2588">It’s <strong data-start="2579"
+                                                        data-end="2588">safer</strong></p>
+                                            </li>
+                                            <li data-start="2591" data-end="2635">
+                                                <p data-start="2593" data-end="2635">Helps the system know when to
+                                                    pause/resume</p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p data-start="2637" data-end="2747">So even modern languages still ask you to mark
+                                    async behavior <strong data-start="2699" data-end="2713">explicitly</strong> for
+                                    clarity, safety, and control.</p>
+                                <hr data-start="2749" data-end="2752">
+                                <h2 data-start="2754" data-end="2803">✅ Summary — Why You Must Use <code
+                                        data-start="2786" data-end="2793">async</code> / <code data-start="2796"
+                                        data-end="2803">await</code></h2>
+                                <div class="_tableContainer_sk2ct_1">
+                                    <div tabindex="-1" class="_tableWrapper_sk2ct_13 group flex w-fit flex-col-reverse">
+                                        <table data-start="2805" data-end="3227"
+                                            class="w-fit min-w-(--thread-content-width)">
+                                            <thead data-start="2805" data-end="2829">
+                                                <tr data-start="2805" data-end="2829">
+                                                    <th data-start="2805" data-end="2814" data-col-size="md">Reason</th>
+                                                    <th data-start="2814" data-end="2829" data-col-size="md">Explanation
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody data-start="2855" data-end="3227">
+                                                <tr data-start="2855" data-end="2935">
+                                                    <td data-start="2855" data-end="2899" data-col-size="md">❗ The
+                                                        system doesn’t know what will block</td>
+                                                    <td data-col-size="md" data-start="2899" data-end="2935">You have to
+                                                        <strong data-start="2913" data-end="2921">mark</strong> it
+                                                        yourself
+                                                    </td>
+                                                </tr>
+                                                <tr data-start="2936" data-end="3010">
+                                                    <td data-start="2936" data-end="2973" data-col-size="md">🔐 Avoids
+                                                        automatic unsafe pausing</td>
+                                                    <td data-col-size="md" data-start="2973" data-end="3010">Prevents
+                                                        race conditions and bugs</td>
+                                                </tr>
+                                                <tr data-start="3011" data-end="3068">
+                                                    <td data-start="3011" data-end="3041" data-col-size="md">🧠 Gives
+                                                        developers control</td>
+                                                    <td data-col-size="md" data-start="3041" data-end="3068">You decide
+                                                        what's async</td>
+                                                </tr>
+                                                <tr data-start="3069" data-end="3150">
+                                                    <td data-start="3069" data-end="3102" data-col-size="md">🚫 Not
+                                                        everything should pause</td>
+                                                    <td data-col-size="md" data-start="3102" data-end="3150">Most code
+                                                        is fast and shouldn't be "awaited"</td>
+                                                </tr>
+                                                <tr data-start="3151" data-end="3227">
+                                                    <td data-start="3151" data-end="3181" data-col-size="md">⚙️ Async
+                                                        code is a contract</td>
+                                                    <td data-col-size="md" data-start="3181" data-end="3227">Tells the
+                                                        event loop how to schedule tasks</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+
+
+
+</body>
+
+</html>
