@@ -1,35 +1,49 @@
-# myapp/views.py
-
+from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from rest_framework import status
-from .models import Book, Author
-from .serializers import BookSerializer, AuthorSerializer
+from .models import Rating, Sales, Restaurant
+from .serializers import RatingSerializer, SalesSerializer, RestaurantSerializer
+
+
 
 @api_view(['GET', 'POST'])
-def author_list(request):
+def ratings(request):
     if request.method == 'GET':
-        authors = Author.objects.all()
-        serializer = AuthorSerializer(authors, many=True)
+        rating = Rating.objects.all()
+        serializer = RatingSerializer(rating, many = True)
         return Response(serializer.data)
     
-    if request.method == 'POST':
-        serializer = AuthorSerializer(data=request.data)
+    elif request.method == 'POST':
+        serializer = RatingSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data, status=201)
-        return Response(serializer.errors, status=400)
-
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
 @api_view(['GET', 'POST'])
-def book_list(request):
+def sales(request):
     if request.method == 'GET':
-        books = Book.objects.all()
-        serializer = BookSerializer(books, many=True)
+        saling = Sales.objects.all()
+        serializer = SalesSerializer(saling, many = True)
         return Response(serializer.data)
-
-    if request.method == 'POST':
-        serializer = BookSerializer(data=request.data)
+    
+    elif request.method == 'POST':
+        serializer = SalesSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data, status=201)
-        return Response(serializer.errors, status=400)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+@api_view(['GET', 'POST'])
+def restaurant(request):
+    if request.method == 'GET':
+        restaurant = Restaurant.objects.all()
+        serializer = RestaurantSerializer(restaurant, many = True)
+        return Response(serializer.data)
+    
+    elif request.method == 'POST':
+        serializer = RestaurantSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
