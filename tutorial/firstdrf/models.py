@@ -26,11 +26,14 @@ class Rating(models.Model):
     User = models.ForeignKey(User,on_delete=models.CASCADE)
     Restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, related_name='Rating')
     Rating = models.PositiveSmallIntegerField()
-
+    
+    class Meta:
+        unique_together = [["User", "Restaurant"]]
+        
     def __str__(self):
         return f"rating: {self.Rating}"
     
 class Sales(models.Model):
-    Restaurant = models.ForeignKey(Restaurant, on_delete=models.SET_NULL, null=True, related_name='Sales')
+    Restaurant = models.ForeignKey(Restaurant, on_delete=models.SET_NULL, null=True, related_name='Sales', unique=True)
     Income = models.DecimalField(max_digits=8,decimal_places=2)
     Datetime = models.DateTimeField()
