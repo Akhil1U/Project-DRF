@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -6,7 +7,7 @@ from .serializers import RatingSerializer, SalesSerializer, RestaurantSerializer
 
 
 
-@api_view(['GET', 'POST'])
+@api_view(['GET', 'POST', 'DELETE'])
 def ratings(request):
     if request.method == 'GET':
         rating = Rating.objects.all()
@@ -21,7 +22,8 @@ def ratings(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 @api_view(['GET', 'POST'])
-def sales(request):
+def sales(request, format = None):
+    
     if request.method == 'GET':
         saling = Sales.objects.all()
         serializer = SalesSerializer(saling, many = True)
@@ -33,7 +35,36 @@ def sales(request):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET', 'PUT', 'DELETE'])
+def sales_details(request, pk, format = None):  # this view is same for every model views so for reusa this code we can use class based view .
+    """
+    Retrieve, update or delete a code snippet.
+    """
+    try:
+        sale = Sales.objects.get(pk=pk)
+    except Sales.DoesNotExist:
+        return HttpResponse(status=404)
     
+    # below code is same for all...
+    if request.method == 'GET':
+        serializer = SalesSerializer(sale)
+        return Response(serializer.data)
+
+    elif request.method == 'PUT':
+        serializer = SalesSerializer(sale, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=400)
+
+    elif request.method == 'DELETE':
+        sale.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+
 @api_view(['GET', 'POST'])
 def restaurant(request):
     if request.method == 'GET':

@@ -13,7 +13,7 @@ class Restaurant(models.Model):
         OTHER = 'OT', 'other'
 
     name = models.CharField(max_length=100)
-    website = models.URLField(null=True)
+    website = models.URLField(null=True, blank=True)
     date_opened = models.DateField()
     latitude = models.FloatField()
     longitude = models.FloatField()
